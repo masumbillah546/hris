@@ -1,20 +1,115 @@
 import { StyleSheet, Text, View, ScrollView, Image, Dimensions, TouchableOpacity } from 'react-native';
-import Mysvg from './assets/Group1000002720.svg'
-import Union from './assets/Union.svg'
-
-// const image = { uri: 'https://reactjs.org/logo-og.png'}
-// const image = require('./assets/Group1000002720.png')
-// const Union = require('./assets/Union.png')
 const { height, width } = Dimensions.get('window')
 const customWidth = width
+import Svg, {
+  Path,
+  G,
+  Rect,
+  Defs,
+  LinearGradient,
+  Stop, } from "react-native-svg";
 
+const Union = (props) => (
+  <Svg
+    width={376}
+    height={748}
+    viewBox="0 0 376 748"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <Path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M240.64 33.7113C245.197 43.2554 253.762 51.3919 264.338 51.3919H345.5C362.069 51.3919 375.5 64.8234 375.5 81.3919V726.392C375.5 737.99 366.098 747.392 354.5 747.392H21.5C9.90202 747.392 0.5 737.99 0.5 726.392V81.3919C0.5 64.8234 13.9315 51.3919 30.5 51.3919H111.661C122.237 51.3919 130.802 43.2554 135.359 33.7113C144.738 14.0707 164.784 0.500977 188 0.500977C211.216 0.500977 231.262 14.0707 240.64 33.7113Z"
+      fill="blue"
+    />
+  </Svg>
+);
+
+const MySvg = (props) => (
+  <Svg
+    width={376}
+    height={272}
+    viewBox="0 0 376 272"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <Path
+      d="M0.5 0.391602H375.5V178.392C375.5 203.244 355.353 223.392 330.5 223.392H45.5C20.6472 223.392 0.5 203.244 0.5 178.392V0.391602Z"
+      fill="#01A9B4"
+    />
+    <G opacity={0.7}>
+      <Rect
+        x={-122.5}
+        y={113.649}
+        width={428.778}
+        height={147.122}
+        transform="rotate(-34.0073 -122.5 113.649)"
+        fill="url(#paint0_linear_2219_8078)"
+      />
+      <Rect
+        x={-27.5}
+        y={130.842}
+        width={345.536}
+        height={147.122}
+        transform="rotate(-34.0073 -27.5 130.842)"
+        fill="url(#paint1_linear_2219_8078)"
+      />
+      <Rect
+        x={39.5}
+        y={149.649}
+        width={345.536}
+        height={147.122}
+        transform="rotate(-34.0073 39.5 149.649)"
+        fill="url(#paint2_linear_2219_8078)"
+      />
+    </G>
+    <Defs>
+      <LinearGradient
+        id="paint0_linear_2219_8078"
+        x1={91.8888}
+        y1={113.649}
+        x2={91.8888}
+        y2={260.771}
+        gradientUnits="userSpaceOnUse"
+      >
+        <Stop stopColor="#02868E" stopOpacity={0.34} />
+        <Stop offset={1} stopColor="#232A37" stopOpacity={0} />
+      </LinearGradient>
+      <LinearGradient
+        id="paint1_linear_2219_8078"
+        x1={145.268}
+        y1={130.842}
+        x2={145.268}
+        y2={277.964}
+        gradientUnits="userSpaceOnUse"
+      >
+        <Stop stopColor="#02868E" stopOpacity={0.4} />
+        <Stop offset={1} stopColor="#00CFDC" stopOpacity={0} />
+      </LinearGradient>
+      <LinearGradient
+        id="paint2_linear_2219_8078"
+        x1={212.268}
+        y1={149.649}
+        x2={212.268}
+        y2={296.771}
+        gradientUnits="userSpaceOnUse"
+      >
+        <Stop stopColor="#02868E" stopOpacity={0.25} />
+        <Stop offset={1} stopColor="#00CFDC" stopOpacity={0} />
+      </LinearGradient>
+    </Defs>
+  </Svg>
+);
 
 export default function App() {
   return (
     <>
     <View style={styles.section1Container}>
       <View style={{ position: 'absolute', left: 0, right: 0, top: - (height * 0.33)}}>
-        <Mysvg height={height} width={width + 2}/>
+        <MySvg height={height} width={customWidth + 2}/>
       </View>
       <View style={styles.backButtonContainer}>
         <Text>Back</Text>
